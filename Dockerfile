@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     curl
-
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -43,7 +42,6 @@ COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html/
 # Change current user to www
 #USER www
-#
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
